@@ -43,7 +43,13 @@ jobs:
 
     - name: Build executable from spec
       run: |
-        pyinstaller "$env:GITHUB_WORKSPACE\heic_to_jpg_converter.spec" -y
+        if (Test-Path "$env:GITHUB_WORKSPACE\heic_to_jpg_converter.spec") {
+          Write-Host "Using spec file build"
+          pyinstaller "$env:GITHUB_WORKSPACE\heic_to_jpg_converter.spec" -y
+        } else {
+          Write-Host "Spec file not found; falling back to CLI build"
+          pyinstaller --windowed --name heic_to_jpg_converter --collect-all pillow_heif heic_to_jpg_converter.py
+        }
 
     - name: Create release archive
       run: |

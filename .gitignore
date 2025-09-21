@@ -28,6 +28,7 @@ MANIFEST
 # PyInstaller
 #  Usually these directories are in the root of the repository
 *.spec
+!heic_to_jpg_converter.spec
 dist/
 build/
 
