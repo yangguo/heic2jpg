@@ -1,0 +1,1 @@
+This directory will contain screenshots for the README.md file.
