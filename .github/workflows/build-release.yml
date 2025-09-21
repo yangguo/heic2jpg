@@ -11,6 +11,10 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: ${{ github.workspace }}
     
     steps:
     - name: Checkout code
@@ -30,19 +34,21 @@ jobs:
 
     - name: Verify workspace contents
       run: |
-        pwd
-        dir
-        echo "Listing root files:"; Get-ChildItem -Force
-        echo "Spec file exists?"; Test-Path .\heic_to_jpg_converter.spec
+        Write-Host "Current directory:"
+        Get-Location
+        Write-Host "Listing root files:"
+        Get-ChildItem -Force
+        Write-Host ("Spec file exists (relative): " + (Test-Path .\heic_to_jpg_converter.spec))
+        Write-Host ("Spec file exists (absolute): " + (Test-Path "$env:GITHUB_WORKSPACE\heic_to_jpg_converter.spec"))
 
     - name: Build executable from spec
       run: |
-        pyinstaller .\heic_to_jpg_converter.spec -y
+        pyinstaller "$env:GITHUB_WORKSPACE\heic_to_jpg_converter.spec" -y
 
     - name: Create release archive
       run: |
         cd dist
-        7z a -tzip ../heic-to-jpg-converter-windows.zip heic_to_jpg_converter.exe
+        7z a -tzip ../heic-to-jpg-converter-windows.zip .
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
