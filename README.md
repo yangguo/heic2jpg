@@ -3,6 +3,7 @@
 [![Python](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)]()
+[![Build](https://github.com/your-username/heic-to-jpg-converter/actions/workflows/build-release.yml/badge.svg)](https://github.com/your-username/heic-to-jpg-converter/actions/workflows/build-release.yml)
 
 A simple and efficient tool for batch converting HEIC images to JPG format on Windows. This desktop application provides an easy-to-use graphical interface for converting Apple's HEIC image format to the widely compatible JPG format.
 
@@ -46,6 +47,17 @@ A simple and efficient tool for batch converting HEIC images to JPG format on Wi
    python heic_to_jpg_converter.py
    ```
 
+### Option 3: Building from Source with GitHub Actions
+
+This repository includes a GitHub Actions workflow that automatically builds Windows executables for new releases. To use it:
+
+1. Create a new tag and push it to GitHub:
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+2. The GitHub Actions workflow will automatically build the executable and create a release with the Windows ZIP file attached.
+
 ## Usage
 
 1. Launch the application (either the executable or Python script)
@@ -67,7 +79,7 @@ Before building the executable, ensure you have:
   pip install -r requirements.txt
   ```
 
-### Building the Executable
+### Building the Executable Locally
 
 1. Install PyInstaller:
    ```bash
@@ -82,6 +94,24 @@ Before building the executable, ensure you have:
 3. After the build process completes, find the executable in the `dist/` folder:
    - `dist/heic_to_jpg_converter.exe` - The standalone executable
    - The entire `dist/` folder contains all necessary files for distribution
+
+### Automated Building with GitHub Actions
+
+This repository includes a GitHub Actions workflow that automatically builds the Windows executable when you create a new tag. The workflow will:
+
+1. Set up a Windows environment
+2. Install Python and all required dependencies
+3. Build the executable using PyInstaller
+4. Package the executable into a ZIP file
+5. Create a GitHub Release and attach the ZIP file
+
+To trigger the automated build:
+1. Create and push a new tag:
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+2. The workflow will run automatically and create a release with the Windows executable.
 
 ### What the Spec File Does
 
