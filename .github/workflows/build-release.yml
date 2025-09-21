@@ -56,6 +56,12 @@ jobs:
         cd dist
         7z a -tzip ../heic-to-jpg-converter-windows.zip .
 
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: heic-to-jpg-converter-windows
+        path: heic-to-jpg-converter-windows.zip
+
     - name: Create Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')

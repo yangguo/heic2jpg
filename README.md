@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)]()
-[![Build](https://github.com/your-username/heic-to-jpg-converter/actions/workflows/build-release.yml/badge.svg)](https://github.com/your-username/heic-to-jpg-converter/actions/workflows/build-release.yml)
+[![Build](https://github.com/yangguo/heic2jpg/actions/workflows/build-release.yml/badge.svg)](https://github.com/yangguo/heic2jpg/actions/workflows/build-release.yml)
 
 A simple and efficient tool for batch converting HEIC images to JPG format on Windows. This desktop application provides an easy-to-use graphical interface for converting Apple's HEIC image format to the widely compatible JPG format.
 
@@ -31,7 +31,8 @@ A simple and efficient tool for batch converting HEIC images to JPG format on Wi
 
 ### Option 1: Using the Standalone Executable (Recommended)
 
-1. Download the latest release from the [Releases](https://github.com/your-username/heic-to-jpg-converter/releases) page
+1. Download the latest release from the [Releases](https://github.com/yangguo/heic2jpg/releases) page
+   - Direct link: [Download latest Windows ZIP](https://github.com/yangguo/heic2jpg/releases/latest/download/heic-to-jpg-converter-windows.zip)
 2. Extract the ZIP file
 3. Run `heic_to_jpg_converter.exe`
 
@@ -163,4 +164,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/your-username/heic-to-jpg-converter/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/yangguo/heic2jpg/issues) on GitHub.
